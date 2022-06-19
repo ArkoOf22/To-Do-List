@@ -1,0 +1,26 @@
+<%- include('header'); -%>
+    <div class="box" id="heading">
+        <h1>
+            <%= ListTitle %>
+        </h1>
+    </div>
+
+    <div class="box">
+        <% for (let i=0 ; i<newItem.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%=newItem[i]%>
+                </p>
+            </div>
+            <% } %>
+
+                <!-- See that the form has action set to "/", thus the to do list gets added to the "/" route -->
+                <!-- The best way to work on submitting a different route is just basically use the button value, see the further code for more understanding-->
+
+                <form class="item" action="/" method="POST">
+                    <input type="text" name="next" placeholder="Enter your next task" autocomplete="off">
+                    <button type="submit" name="buttonValue" value=<%=ListTitle%>>+</button>
+                </form>
+    </div>
+    <%- include('footer'); -%>
